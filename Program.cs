@@ -20,20 +20,16 @@ using System.Xml;
 
 int[] b = new int[4] { 12, 34, 56, 45 };
 
+int max = b[0];
 
-for (int i = 0; i < 4; i++)
+for (int i = 0; i < b.Length; i++)
 {
-    for (int j = 0; j < 4; j++)
+    if (b[i] > max)
     {
-        if (b[i] < b[j])
-        {
-            b[i] = b[j];
-            b[i] = b[j + 1];
-            Console.WriteLine(b[i]);
-            break;
-        }
+        max = b[i];
     }
 }
+Console.WriteLine(i);
 
 
 
@@ -47,6 +43,22 @@ int cem = w[0]+ w[w.Length-1];
 Console.WriteLine(cem);
 
 //4.Verilmiş müsbət tam n ədədinin 2-nin qüvvəti olub-olmamasını tapın
+
+int n = Convert.ToInt32(Console.ReadLine());
+
+while (n > 1)
+{
+    n /= 2; 
+}
+    if (n == 0)
+    {
+        Console.WriteLine("2-nin qüvvətidir");
+        
+    }
+    else
+{
+    Console.WriteLine("2-nin qüvvəti deyil");
+}
 
 
 
@@ -71,21 +83,17 @@ Console.WriteLine(l);
 
 
 int[] n = { 20, 30, 40, 45, 50, 60 };
+int a = 50;
 
+int index = -1;
 for (int i = 0; i < n.Length; i++)
 {
-    if (n[i] == 50)
+    if (a == n[i])
     {
-        Console.WriteLine("50 ededi var");
-        break;
+        index = i;
     }
-    else if (i == n.Length-1)
-    {
-        Console.WriteLine("-1");
-    }
-
 }
-
+Console.WriteLine(index);
 
 //7.Verilmiş ədədlər siyahısındaki rəqəmlərinin sayı 2-dən
 //böyük olan ədədlərin cəmini tapan alqoritm
@@ -96,7 +104,8 @@ int[] n = { 1, -5, 12, -6, 4 };
 int cem = 0;
 for  (int i = 0; i < n.Length; i++)
 {
-    if (n[i] > 2) {
+   
+    if (n[i] >= 100) {
         cem += n[i];
     }
 }
@@ -122,7 +131,7 @@ var group = new
 };
 
 int cem = 0;
-for (int i = 0; i < 3; i++)
+for (int i = 0; i < group.points.Length; i++)
 {
     cem += group.points[i];
 }
